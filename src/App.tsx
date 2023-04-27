@@ -1,4 +1,3 @@
-// src/App.tsx
 import React, { useEffect } from "react";
 import users from "./users.json";
 import { useFormattedData } from "./hooks/useFormattedData";

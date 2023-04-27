@@ -1,4 +1,3 @@
-// src/hooks/useFormattedData.ts
 import { useCallback, useState } from "react";
 
 type User = {
@@ -19,18 +18,17 @@ export const useFormattedData = (data: User[]) => {
   const sortBy = useCallback(
     (property: keyof User | ((a: User, b: User) => number)) => {
       let newFormatted = [...formatted];
-  
+
       if (typeof property === "function") {
         newFormatted.sort(property);
       } else {
         newFormatted.sort((a, b) => (a[property] > b[property] ? 1 : -1));
       }
-  
+
       setFormatted(newFormatted);
     },
     [formatted]
   );
-  
 
   const filter = useCallback(
     (fn: (user: User) => boolean) => {
